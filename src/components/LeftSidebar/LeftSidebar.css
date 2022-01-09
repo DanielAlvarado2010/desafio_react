@@ -1,0 +1,31 @@
+.LBcontIntro {
+    width: 240px;
+    padding-top: 10px;
+    margin-left: 15px;
+  }
+  
+  .LBcontIntro .nav-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 240px;
+    align-items: center;
+  }
+  
+  .LBcontIntro .nav-item .nav-link {
+    padding-right: 5px;
+  }
+  
+  .LBcontIntro .nav-item .tagName {
+    padding-top: 10px;
+    color: black;
+  }
+  
+  .LBcontIntro .nav-item:hover {
+    border-radius: 5px;
+    background-color: #e6e3e3;
+  }
