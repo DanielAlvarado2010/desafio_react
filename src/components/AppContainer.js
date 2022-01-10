@@ -1,10 +1,9 @@
-import "./App.css";
-import { Outlet } from "react-router-dom";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
-function App() {
-  return (
+export default function AppContainer({ children }) {
+	return (
 		<div className="main">
 			<nav className="main-nav">
 				<Link className="link" to="/">
@@ -15,10 +14,9 @@ function App() {
 				</Link>
 			</nav>
 			<div className="main-content">
-				<Outlet />
+				Esto estará en todo lo que app contenga
+				{children}
 			</div>
 		</div>
 	);
 }
-
-export default App;
