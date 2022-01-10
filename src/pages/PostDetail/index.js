@@ -24,21 +24,23 @@ export default function PostDetail() {
 	const params = useParams();
 	const navigate = useNavigate();
 
+	const postID = "61a65429f4ff3c9f4961ff37";
+
 	useEffect(() => {
 		const get = async () => {
-			const response = await getPost(params.postID);
+			const response = await getPost(postID);
 			console.log(response);
 			setPost(response.posts);			
 			setTags(Object.values(response?.posts.tags))
 		};
 		get();
 		
-	}, [params.postID]);
+	}, [postID]);
 
 	
 	const handleDelete = async () => {
 		console.error("eliminado");
-		await deletePost(params.postID);
+		await deletePost(postID);
 		navigate("/posts");
 	};
 
@@ -88,6 +90,9 @@ export default function PostDetail() {
 			case 12:
 				compoundDate += `Dec ${datePublication.day}`;
 				break;
+			default:
+				compoundDate = "";
+				break;
 		}
 	
 		return compoundDate;	
@@ -98,6 +103,8 @@ export default function PostDetail() {
 		<Container fluid>
 			<Row>
 				<Col>
+				</Col>
+				<Col xs={6}>
 					<ImagePost 
 						srcImage={post?.coverImage}
 						idImage="imgCover"
@@ -107,13 +114,13 @@ export default function PostDetail() {
 						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-4 long" id="title">
 							{post?.title}
 						</h1>
-						{
+						{/* {
 							tags.map((tag) => (
 								<Tag
 									element = {tag}
 								/>
 							))
-						}
+						} */}
 						<div className="subhead d-flex align-items-center mb-3 flex-wrap">
 							<div id="avatar">
 								<ImagePost 
@@ -131,6 +138,9 @@ export default function PostDetail() {
 							content = {post?.content}
 						/>
 					</div> 
+				</Col>
+				<Col>
+				
 				</Col>
 			</Row>
 		</Container>

@@ -1,0 +1,20 @@
+.fs-xs {
+    font-size: 0.75rem;
+}
+
+.color-base-60 {
+    color: #717171;
+}
+
+#data a{
+    text-decoration: none;
+}
+
+.crayons-link {
+    font-weight: 700;
+    color: #3d3d3d;
+}
+
+.crayons-link:hover {
+    color: #3b49df;
+}

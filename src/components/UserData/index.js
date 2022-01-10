@@ -1,10 +1,12 @@
+import "./UserData.css";
+
 import React from "react";
 
 function UserData({userName, datePost}) {
     return (
 		<div id="data">
 			<a href="#">
-				<span class="crayons-link" id="userName">
+				<span className="crayons-link" id="userName">
 					{userName}
 				</span>
 			</a>
