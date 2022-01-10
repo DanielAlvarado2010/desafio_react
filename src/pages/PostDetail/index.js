@@ -107,13 +107,13 @@ export default function PostDetail() {
 						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-4 long" id="title">
 							{post?.title}
 						</h1>
-						{
+						{/* {
 							tags.map((tag) => (
 								<Tag
 									element = {tag}
 								/>
 							))
-						}
+						} */}
 						<div className="subhead d-flex align-items-center mb-3 flex-wrap">
 							<div id="avatar">
 								<ImagePost 
@@ -122,10 +122,10 @@ export default function PostDetail() {
 									clase="border border-light border border-1 rounded-circle avatar"
 								/>
 							</div>
-							<UserData 
+							{/* <UserData 
 								userName = {post?.user}
 								datePost = {dateTimer(post?.datePublication)}
-							/>
+							/> */}
 						</div>
 						<PostContent 
 							content = {post?.content}
