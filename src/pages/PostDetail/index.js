@@ -24,21 +24,23 @@ export default function PostDetail() {
 	const params = useParams();
 	const navigate = useNavigate();
 
+	const postID = "61a65429f4ff3c9f4961ff37";
+
 	useEffect(() => {
 		const get = async () => {
-			const response = await getPost(params.postID);
+			const response = await getPost(postID);
 			console.log(response);
 			setPost(response.posts);			
 			setTags(Object.values(response?.posts.tags))
 		};
 		get();
 		
-	}, [params.postID]);
+	}, [postID]);
 
 	
 	const handleDelete = async () => {
 		console.error("eliminado");
-		await deletePost(params.postID);
+		await deletePost(postID);
 		navigate("/posts");
 	};
 
@@ -88,6 +90,9 @@ export default function PostDetail() {
 			case 12:
 				compoundDate += `Dec ${datePublication.day}`;
 				break;
+			default:
+				compoundDate = "";
+				break;
 		}
 	
 		return compoundDate;	
@@ -98,6 +103,8 @@ export default function PostDetail() {
 		<Container fluid>
 			<Row>
 				<Col>
+				</Col>
+				<Col xs={6}>
 					<ImagePost 
 						srcImage={post?.coverImage}
 						idImage="imgCover"
@@ -131,6 +138,9 @@ export default function PostDetail() {
 							content = {post?.content}
 						/>
 					</div> 
+				</Col>
+				<Col>
+				
 				</Col>
 			</Row>
 		</Container>
