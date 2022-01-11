@@ -1,0 +1,58 @@
+:root{
+    --bg-color: rgb(239,239,239);
+    --card-margin-top: 15px;
+    --card-bg-color: rgb(249,249,249);
+    --card-bg-hover-color:rgb(255,255,255);
+    --card-font-hover-color: rgb(50,62,196);
+    --card-button-bg-hover-color: rgb(50,92,190);
+    --card-button-bg-hover-gray: rgb(189,189,189);
+    --card-button-bg-gray: rgb(214,214,215);
+    --card-button-bg-color: rgb(59,73,223);
+
+}
+* {
+    text-decoration: none;
+}
+.side-bar-right-card{
+    margin-top: var(--card-margin-top);
+    background-color: var(--card-bg-color);
+
+}
+.side-bar-right-card .card-header{
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--card-bg-color);
+
+}
+.side-bar-right-card .card-header:hover{
+    color: var(--card-font-hover-color)
+}
+.side-bar-right-card .card-item-list{
+    text-decoration: none;
+    display:block;
+    background-color: var(--card-bg-color);
+    color:black;
+    
+}
+.side-bar-right-card .card-item-list:hover{
+    text-decoration: none;
+    background-color: var(--card-bg-hover-color);
+    color: var(--card-font-hover-color);
+}
+.side-bar-right-card .card-purple-button{
+    background-color: var(--card-button-bg-color);
+    margin-bottom: 10px;
+}
+.side-bar-right-card .card-purple-button:hover{
+    background-color: var(--card-button-bg-hover-color);
+    
+}
+.side-bar-right-card .card-gray-button{
+background-color: var(--card-button-bg-gray);
+color: rgb(73, 72, 72)
+}
+.side-bar-right-card .card-gray-button:hover{
+    background-color: var(--card-button-bg-hover-gray);
+    color: black;
+}
+
