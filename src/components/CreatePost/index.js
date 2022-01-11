@@ -1,65 +1,33 @@
 import { react, useState, useEffect } from "react";
 import styles from "./styles.css";
 
+const getUsers = async () => {
+  const response = await fetch("http://localhost:8080/users");
+  const result = Object.values(response);
+  const renderUser = result[0];
+
+  const dataLength = renderUser.length;
+
+  const randomNumber = Math.floor(Math.random() * dataLength);
+
+  const userName = renderUser[randomNumber].name;
+  const userImg = renderUser[randomNumber].image;
+
+  return { userName, userImg, randomNumber };
+};
+
 const CreatePost = () => {
   const [sideDisplay, setSideDisplay] = useState(0);
   const titleDisplay = sideDisplay && sideDisplay === 1 ? "show" : "dontShow";
   const tagDisplay = sideDisplay && sideDisplay == 2 ? "show" : "dontShow";
   const contentDisplay = sideDisplay && sideDisplay == 3 ? "show" : "dontShow";
 
-  const dateObj = new Date();
-  const month = dateObj.getUTCMonth() + 1;
-  const day = dateObj.getUTCDate();
-  const year = dateObj.getUTCFullYear();
-  const week = getWeek(dateObj);
-  const mili = dateObj.getTime();
-
-  // Funciones
-
-  let userName = "";
-  let userImg = "";
-  let randomNumber = "";
-
-  const [tags, setTags] = useState([]);
-
-  useEffect(() => {
-    const getTags = async () => {
-      const response = await fetch("http://localhost:8080/tags");
-      const data = await response.json();
-      console.log(data, "data");
-      const result = Object.values(data);
-      const tagObject = result[0];
-      const renderTags = Object.values(tagObject[0]);
-      console.log(renderTags, "pendejada");
-      setTags(renderTags);
-    };
-
-    getTags();
-  }, []);
-
-  console.log(tags, "tags");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("HAOASD");
+  const [selectedTags, setSelectedTags] = useState([]);
+  const tagArray = (event) => {
+    setSelectedTags(event.target.value);
   };
 
-  // const postResult = (response) => {
-  //   const result = Object.values(response);
-  //   const renderUser = result[0];
-
-  //   userName = renderUser.map((user) => {
-  //     return user.name;
-  //   });
-
-  //   userImg = renderUser.map((img) => {
-  //     return img.image;
-  //   });
-
-  //   const dataLength = userName.length;
-
-  //   randomNumber = Math.floor(Math.random() * dataLength);
-  // };
+  // getWeek sets the data for the specific date when the user creates the post
 
   function getWeek(currentDate) {
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
@@ -69,6 +37,76 @@ const CreatePost = () => {
     let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
     return result;
   }
+
+  const dateObj = new Date();
+  const month = dateObj.getUTCMonth() + 1;
+  const day = dateObj.getUTCDate();
+  const year = dateObj.getUTCFullYear();
+  const week = getWeek(dateObj);
+  const mili = dateObj.getTime();
+
+  // Hooks to get all the tags from the DB and render them on the select tag
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    const getTags = async () => {
+      const response = await fetch("http://localhost:8080/tags");
+      const data = await response.json();
+      const result = Object.values(data);
+      const tagObject = result[0];
+      const renderTags = Object.values(tagObject[0]);
+      setTags(renderTags);
+    };
+
+    getTags();
+  }, []);
+
+  // Hooks for the post method
+
+  const [titlePost, setTitlePost] = useState("");
+  const [postBody, setPostBody] = useState("");
+  const [postImg, setPostImg] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const { userName, userImg, randomNumber } = await getUsers();
+
+    const post = {
+      user: userName[randomNumber],
+      userImg: userImg[randomNumber],
+      title: titlePost,
+      content: postBody,
+      tags: {
+        t1: selectedTags[0],
+        t2: selectedTags[1],
+        t3: selectedTags[2],
+        t4: selectedTags[3],
+      },
+      coverImage: postImg,
+      datePublication: {
+        day: day,
+        miliseconds: mili,
+        month: month,
+        year: year,
+        week: week,
+      },
+      image: postImg,
+      likes: 3,
+      comments: 1,
+      unicorns: 15,
+    };
+
+    const response = await fetch("http://localhost:8080/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post),
+    });
+
+    return await response.json();
+  };
 
   return (
     <div>
@@ -142,8 +180,9 @@ const CreatePost = () => {
                   type="text"
                   placeholder="New post title here..."
                   id="titlePost"
-                  value=""
+                  value={titlePost}
                   onClick={() => setSideDisplay(1)}
+                  onChange={(event) => setTitlePost(event.target.value)}
                 />
               </div>
               <div>
@@ -151,7 +190,11 @@ const CreatePost = () => {
                   name="select"
                   id="tagSelector"
                   className="inputAddTags"
-                  onClick={() => setSideDisplay(2)}
+                  onClick={() => {
+                    setSideDisplay(2);
+                    tagArray();
+                  }}
+                  multiple={true}
                 >
                   <option value="" className="inputAddTags">
                     Add up to 4 tags...
@@ -188,7 +231,8 @@ const CreatePost = () => {
                 className="userImg"
                 placeholder="URL image"
                 id="postImg"
-                value=""
+                value={postImg}
+                onChange={(event) => setPostImg(event.target.value)}
               />
             </div>
             <div className="formContainer">
@@ -199,7 +243,9 @@ const CreatePost = () => {
                 className="textArea"
                 placeholder="Write your post content here..."
                 id="postBody"
+                value={postBody}
                 onClick={() => setSideDisplay(3)}
+                onChange={(event) => setPostBody(event.target.value)}
               ></textarea>
             </div>
           </div>
@@ -244,7 +290,7 @@ const CreatePost = () => {
             <button
               className="submitbutton"
               id="saveButton"
-              onClick={handleSubmit}
+              onClick={() => handleSubmit()}
             >
               <a className="styleDeleter" href="../index.html">
                 Publish
