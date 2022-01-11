@@ -12,6 +12,9 @@ import ImagePost from "../../components/ImagePost";
 import Tag from "../../components/Tag";
 import UserData from "../../components/UserData";
 import PostContent from "../../components/PostContent";
+import AsideLeftPost from "../../components/AsideLeftPost";
+import AsideRightPost from "../../components/AsideRightPost";
+import Footer from "../../components/Footer";
 
 // Service
 import { getPost } from "../../services/posts";
@@ -102,9 +105,14 @@ export default function PostDetail() {
 	return (
 		<Container fluid>
 			<Row>
-				<Col>
+				<Col xl={1} lg={1} md={1} >
+					<AsideLeftPost
+						reaction = {post?.likes} 
+						unicorn = {post?.unicorns}
+						comment = {post?.comments}
+					/>
 				</Col>
-				<Col xs={6}>
+				<Col xl={7} lg={8} md={11} sm={"auto"} >
 					<ImagePost 
 						srcImage={post?.coverImage}
 						idImage="imgCover"
@@ -139,8 +147,13 @@ export default function PostDetail() {
 						/>
 					</div> 
 				</Col>
+				<Col xl={4} lg={3} md={11}>
+					<AsideRightPost />
+				</Col>
+			</Row>
+			<Row>
 				<Col>
-				
+					<Footer />
 				</Col>
 			</Row>
 		</Container>
