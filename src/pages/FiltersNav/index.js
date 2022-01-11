@@ -26,7 +26,7 @@ useEffect (() => {
 
         const response = await getPosts();
         const arrayResponse = Object.values(response)
-
+            console.log(arrayResponse)
         setContent(arrayResponse)
         
     }
