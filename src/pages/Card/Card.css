@@ -54,13 +54,14 @@
     border-bottom: 5px solid #3B49DF;
   }
   
-  .middle .first-article-content {
+  
+  .first-article-content {
     margin-top: 0px;
     background-color: #fff;
     border-radius: 5px;
   }
   
-  .middle .first-article-content .img-author {
+   .first-article-content .img-author {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -68,16 +69,16 @@
     margin-bottom: 15px;
   }
   
-  .middle .first-article-content .img-author .img-conteiner {
+   .first-article-content .img-author .img-conteiner {
     margin-right: 10px;
   }
   
-  .middle .first-article-content .img-author .img-conteiner img {
+   .first-article-content .img-author .img-conteiner img {
     border-radius: 50%;
     width: 35px;
   }
   
-  .middle .first-article-content .img-author .text-conteiner {
+   .first-article-content .img-author .text-conteiner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -91,39 +92,39 @@
     font-size: 13px;
   }
   
-  .middle .first-article-content .img-author .text-conteiner .top-text {
+   .first-article-content .img-author .text-conteiner .top-text {
     color: #000;
   }
   
-  .middle .first-article-content .img-author .text-conteiner .down-text {
+   .first-article-content .img-author .text-conteiner .down-text {
     color: #575757;
   }
   
-  .middle .first-article-content .img-author .text-conteiner .top-text:hover {
+   .first-article-content .img-author .text-conteiner .top-text:hover {
     background: #F6F6F6;
     color: #000;
   }
   
-  .middle .first-article-content .img-author .text-conteiner .down-text:hover {
+   .first-article-content .img-author .text-conteiner .down-text:hover {
     background: #F6F6F6;
     color: #000;
   }
   
-  .middle .first-article-content .title {
+   .first-article-content .title {
     width: 75%;
     margin: 0 auto 15px;
     text-align: start;
   }
   
-  .middle .first-article-content .title h2 {
+   .first-article-content .title h2 {
     cursor: pointer;
   }
   
-  .middle .first-article-content .title h2:hover {
+   .first-article-content .title h2:hover {
     color: #3B49DF;
   }
   
-  .middle .first-article-content .hashtag-conteiner {
+   .first-article-content .hashtag-conteiner {
     width: 75%;
     margin: 0 auto 15px;
     display: -webkit-box;
@@ -136,25 +137,25 @@
     font-weight: 300;
   }
   
-  .middle .first-article-content .hashtag-conteiner a {
+   .first-article-content .hashtag-conteiner a {
     margin-right: 10px;
     color: #575757;
   }
   
-  .middle .first-article-content .hashtag-conteiner a span {
+   .first-article-content .hashtag-conteiner a span {
     color: #9C9C9C;
   }
   
-  .middle .first-article-content .hashtag-conteiner a:hover {
+   .first-article-content .hashtag-conteiner a:hover {
     background: #F6F6F6;
     color: #000;
   }
   
-  .middle .first-article {
+   .first-article {
     margin-bottom: 10px;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner {
+   .first-article .first-article-content .icons-conteiner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -169,13 +170,13 @@
     padding: 0 0 15px;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner {
+   .first-article .first-article-content .icons-conteiner .left-conteiner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -188,15 +189,15 @@
     font-weight: 300;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner i {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner i {
     margin-right: 10px;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner:hover {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .reaction-conteiner:hover {
     background: #F6F6F6;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -208,15 +209,15 @@
     font-weight: 300;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner i {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner i {
     margin-right: 10px;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner:hover {
+   .first-article .first-article-content .icons-conteiner .left-conteiner .comment-conteiner:hover {
     background: #F6F6F6;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .icons-right .save-container {
+   .first-article .first-article-content .icons-conteiner .icons-right .save-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -225,26 +226,26 @@
             align-items: center;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .icons-right .save-container p {
+   .first-article .first-article-content .icons-conteiner .icons-right .save-container p {
     margin-right: 10px;
     color: #575757;
     font-size: 13px;
     font-weight: 300;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .icons-right .save-container button {
+   .first-article .first-article-content .icons-conteiner .icons-right .save-container button {
     padding: 8px 17px;
     border-radius: 5px;
     border: none;
     color: #575757;
   }
   
-  .middle .first-article .first-article-content .icons-conteiner .icons-right .save-container button:hover {
+   .first-article .first-article-content .icons-conteiner .icons-right .save-container button:hover {
     background: #BDBDBD;
     color: #000;
   }
   
-  .middle .img-author {
+   .img-author {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -252,24 +253,24 @@
     margin-bottom: 15px;
   }
   
-  .middle .img-author .img-conteiner-relative {
+   .img-author .img-conteiner-relative {
     position: relative;
     margin-right: 10px;
     /*  margin-right: 10px; */
   }
   
-  .middle .img-author .img-conteiner-relative img {
+   .img-author .img-conteiner-relative img {
     border-radius: 50%;
     width: 35px;
   }
   
-  .middle .img-author .img-conteiner-relative .img-conteiner-absolute {
+   .img-author .img-conteiner-relative .img-conteiner-absolute {
     position: absolute;
     left: 11.5px;
     top: 9.5px;
   }
   
-  .middle .img-author .img-conteiner-relative .img-conteiner-absolute img {
+   .img-author .img-conteiner-relative .img-conteiner-absolute img {
     -webkit-transform: scale(0.65);
             transform: scale(0.65);
   }
