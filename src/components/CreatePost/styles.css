@@ -1,0 +1,197 @@
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.barra {
+  display: none;
+  visibility: hidden;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+.create {
+  padding: 0 2em;
+  font: inherit;
+  font-weight: 500;
+  font-size: large;
+}
+
+.createFilter {
+  position: relative;
+  height: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  transition: all 0.5s;
+}
+
+.createFilter:hover {
+  background-color: #4d71de1c;
+}
+
+.filterElement {
+  font-size: 1.1em;
+  color: #090909;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+.filterElement2 {
+  font-size: 1.1em;
+  color: #090909;
+  transition: all 0.2s;
+}
+.item-line {
+  position: absolute;
+  visibility: hidden;
+  width: 0px;
+  border: 2px solid #4d72de;
+  bottom: -2px;
+  transition: all 0.1s;
+}
+
+.item-line:hover {
+  visibility: visible;
+  width: 80%;
+}
+
+.filterElement:hover {
+  color: #4d72de;
+}
+
+.editNewPost {
+  background-color: white;
+  margin: 0.2rem 0 0.2rem 9rem;
+  border: solid gray 0.1px;
+  border-radius: 7px;
+}
+
+.editPostBar {
+  padding: 0 26rem 0 10rem;
+}
+
+.inputContainer {
+  margin: 40px 0 10px 0;
+  padding: 0 30px 0 20px;
+}
+
+.newPostBarBackground {
+  background: #efefef;
+}
+
+.inputNewTitle {
+  width: 90%;
+  font-size: 45px;
+  font-weight: bolder;
+  border: none;
+}
+
+.inputAddTags {
+  width: 90%;
+  font-size: 15px;
+  border: none;
+  font-family: inherit;
+  color: gray;
+  margin-top: 20px;
+}
+
+.imgContainer {
+  margin-top: 25px;
+  padding: 10px 30px 10px 20px;
+  background: #f9f9f9;
+}
+
+.formContainer {
+  margin-top: 25px;
+  padding: 0 30px 0 20px;
+}
+
+.textArea {
+  margin-bottom: 35px;
+  border: none;
+  width: 90%;
+  font-size: 20px;
+}
+
+.finalbuttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 1rem 1rem 9rem;
+}
+
+.submitbutton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(37, 37, 255);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px 0 0;
+}
+
+.submitbutton:hover {
+  background: rgb(48, 29, 160);
+}
+
+.userImg {
+  border: none;
+  background: #f9f9f9;
+  width: 90%;
+}
+.saveDraft {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px 0 0;
+  background: #d1cfcf;
+  color: rgb(48, 43, 43);
+}
+
+.saveDraft:hover {
+  background: #b4adad;
+}
+
+.titleAsideHeader {
+  font-weight: bold;
+}
+
+.titleAside {
+  margin: 40px 0 0 7px;
+  display: none;
+}
+
+.tagAside {
+  display: none;
+  margin: 80px 0 0 7px;
+}
+
+.contentAside {
+  display: none;
+  margin: 230px 0 0 7px;
+}
+
+.styleDeleter {
+  text-decoration: none;
+  color: white;
+}
+
+.show {
+  display: block;
+}
+
+.dontShow {
+  display: none;
+}
