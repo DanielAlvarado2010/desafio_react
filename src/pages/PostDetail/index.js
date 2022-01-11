@@ -103,16 +103,16 @@ export default function PostDetail() {
 	
 		
 	return (
-		<Container fluid>
-			<Row>
-				<Col xl={1} lg={1} md={1} >
+		<Container>
+			<Row className="justify-content-center">			
+				<Col xxl={1} xl={1} lg={1} md={1} className="justify-content-center">
 					<AsideLeftPost
 						reaction = {post?.likes} 
 						unicorn = {post?.unicorns}
 						comment = {post?.comments}
 					/>
 				</Col>
-				<Col xl={7} lg={8} md={11} sm={"auto"} >
+				<Col xxl={7} xl={7} lg={8} md={11} sm={"auto"} >
 					<ImagePost 
 						srcImage={post?.coverImage}
 						idImage="imgCover"
@@ -137,25 +137,20 @@ export default function PostDetail() {
 									clase="border border-light border border-1 rounded-circle avatar"
 								/>
 							</div>
-							{/* <UserData 
+							<UserData 
 								userName = {post?.user}
 								datePost = {dateTimer(post?.datePublication)}
-							/> */}
+							/>
 						</div>
 						<PostContent 
 							content = {post?.content}
 						/>
 					</div> 
 				</Col>
-				<Col xl={4} lg={3} md={11}>
+				<Col xxl={3} xl={4} lg={4} md={{ span: 11 }}>
 					<AsideRightPost />
 				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<Footer />
-				</Col>
-			</Row>
+			</Row>			
 		</Container>
 	);
 }
