@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { getPosts } from '../../services/getFilters';
-import Card from '../Card/index';
+import Card from '../Card';
 
 //styles 
 

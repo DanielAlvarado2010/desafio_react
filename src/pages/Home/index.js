@@ -4,6 +4,7 @@ import Li from "../../components/Li";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { LeftSidebar } from "../../components/LeftSidebar";
 import  SideBarRight  from '../../components/SideBarRight'
+import FiltersNav from "../FiltersNav";
 import Container from 'react-bootstrap/Container'
 import  Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
@@ -40,7 +41,7 @@ export default function Home() {
 				<Row className="justify-content-md-center">
 				
 					<Col sm lg ={3}>  <LeftSidebar/>  </Col>
-					<Col sm lg ={6}>  <div>sadsadsa</div>  </Col>
+					<Col sm lg ={6}> <FiltersNav/>   </Col>
 					<Col sm lg ={3}>  <SideBarRight/>  </Col>
 				
 				</Row>
