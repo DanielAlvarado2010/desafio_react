@@ -1,0 +1,11 @@
+.columna{
+    display: flex;
+    left: 22%;
+}
+
+
+@media (max-width: 1800px) {
+    .columna{
+        left: 20%;
+    }
+}

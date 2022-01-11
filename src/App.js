@@ -1,13 +1,25 @@
+import react from "react";
 import "./App.css";
-import { LeftSidebar } from "./components/LeftSidebar";
+import { Outlet } from "react-router-dom";
+
+import { Link } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">DevTo</header>
-      <LeftSidebar/>
-    </div>
-  );
+		<div className="main">
+			<nav className="main-nav">
+				<Navbar />
+			</nav>
+			<div className="main-content">
+				<Outlet />
+			</div>
+			<div>
+				<Footer />
+			</div>
+		</div>
+	);
 }
 
 export default App;
