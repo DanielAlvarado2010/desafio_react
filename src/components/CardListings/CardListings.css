@@ -16,13 +16,18 @@
 .side-bar-right-card{
     margin-top: var(--card-margin-top);
     background-color: var(--card-bg-color);
-
+    border-radius: 15px;
 }
 .side-bar-right-card .card-header{
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--card-bg-color);
-
+    padding:15px;
+}
+.side-bar-right-card .card-header .hyperlink-purple-header{
+    text-decoration: none;
+    color:var(--card-font-hover-color)
 }
 .side-bar-right-card .card-header:hover{
     color: var(--card-font-hover-color)
@@ -55,4 +60,3 @@ color: rgb(73, 72, 72)
     background-color: var(--card-button-bg-hover-gray);
     color: black;
 }
-

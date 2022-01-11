@@ -13,6 +13,7 @@ import CardListings from '../CardListings'
             <CardForem/>
             <CardStories/>
             <CardListings/>
+            
         </Col>
             
         

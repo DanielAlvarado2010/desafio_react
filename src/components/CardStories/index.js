@@ -7,22 +7,22 @@ import "./CardStories.css"
  function CardStories() {
     return (
         
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kkxvvytot7mztccmawdb.png" width="1000" height="420" />
+            <Card style={{ width: '18rem' }} className='side-bar-right-card'>
+                <Card.Img variant="top" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kkxvvytot7mztccmawdb.png" />
                 <Card.Body>
-                    <Card.Title><h3>Stories</h3></Card.Title>
+                    <Card.Title className='card-header'>Stories</Card.Title>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem><a href='#'>MovieFlixer</a></ListGroupItem>
-                    <ListGroupItem><a href='#'>Portal to submit hackathon entry</a></ListGroupItem>
-                    <ListGroupItem><a href='#'>Simple web application for Mongo DB atlas hackathon</a></ListGroupItem>
-                    <ListGroupItem><a href='#'>Konohagakure Search</a></ListGroupItem>
-                    <ListGroupItem><a href='#'>Music Space</a></ListGroupItem>
+                    <ListGroupItem className='card-item-list'><a href='#' className="card-item-list">MovieFlixer</a></ListGroupItem>
+                    <ListGroupItem className="card-item-list"><a href='#' className="card-item-list">Portal to submit hackathon entry</a></ListGroupItem>
+                    <ListGroupItem className="card-item-list"><a href='#' className="card-item-list">Simple web application for Mongo DB atlas hackathon</a></ListGroupItem>
+                    <ListGroupItem className="card-item-list"><a href='#' className="card-item-list">Konohagakure Search</a></ListGroupItem>
+                    <ListGroupItem className="card-item-list"><a href='#' className="card-item-list">Music Space</a></ListGroupItem>
                 </ListGroup>
                 <Card.Body>
 
-                    <Button>Submit your proyect</Button>
-                    <Button>See all posts</Button>
+                    <Button className='card-purple-button'>Submit your proyect</Button>
+                    <Button className='card-gray-button'>See all posts</Button>
 
                 </Card.Body>
             </Card>

@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css"
 import { LeftSidebar } from "./components/LeftSidebar";
 import  SideBarRight  from './components/SideBarRight'
 import Container from 'react-bootstrap/Container'
