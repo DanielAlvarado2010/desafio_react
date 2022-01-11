@@ -1,0 +1,11 @@
+.container-filters {
+    display: flex;
+}
+
+.container-filters .left-filters {
+    display: flex;
+}
+
+.container-filters .right-filters {
+    display: flex;
+}
