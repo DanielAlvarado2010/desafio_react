@@ -1,4 +1,11 @@
 .columna{
     display: flex;
-    align-items: center;
+    left: 22%;
+}
+
+
+@media (max-width: 1800px) {
+    .columna{
+        left: 20%;
+    }
 }

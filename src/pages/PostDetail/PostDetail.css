@@ -1,4 +1,4 @@
-*{
+/* *{
     text-decoration: none;
     list-style: none;    
 }
@@ -14,7 +14,7 @@
 * .barra{
     display: none;
     visibility: hidden;
-}
+} */
 
 .avatar{
     width: 45px;
@@ -39,7 +39,7 @@
     font-weight: 400;
 }
 
-.titles{
+/* .titles{
     font-size: 22px;
 }
 
@@ -130,9 +130,9 @@
 .card_author .negrita{
     font-weight:550;
     color: rgb(134, 130, 130);
-}
+} */
 
-.fs-xs {
+/* .fs-xs {
     font-size: 0.75rem;
 }
 
@@ -156,7 +156,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 
 .card-post{
