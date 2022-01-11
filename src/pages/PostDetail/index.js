@@ -22,7 +22,8 @@ import { deletePost } from "../../services/posts";
 
 export default function PostDetail() {
 	const [post, setPost] = useState({});
-	const [tags, setTags] = useState({});	
+	const [tags, setTags] = useState([]);	
+	const [dates, setDates] = useState([]);	
 
 	const params = useParams();
 	const navigate = useNavigate();
@@ -35,6 +36,7 @@ export default function PostDetail() {
 			console.log(response);
 			setPost(response.posts);			
 			setTags(Object.values(response?.posts.tags))
+			setDates(dateTimer(response?.posts.datePublication))
 		};
 		get();
 		
@@ -101,6 +103,7 @@ export default function PostDetail() {
 		return compoundDate;	
 	};
 	
+	console.log(tags)
 		
 	return (
 		<Container >
@@ -119,16 +122,6 @@ export default function PostDetail() {
 						clase="card-img-top"
 					/>
 					<div className="card-post">
-						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold lh-tight mb-4 long" id="title">
-							{post?.title}
-						</h1>
-						{/* {
-							tags.map((tag) => (
-								<Tag
-									element = {tag}
-								/>
-							))
-						} */}
 						<div className="subhead d-flex align-items-center mb-3 flex-wrap">
 							<div id="avatar">
 								<ImagePost 
@@ -137,15 +130,29 @@ export default function PostDetail() {
 									clase="border border-light border border-1 rounded-circle avatar"
 								/>
 							</div>
-							{/* <UserData 
+							<UserData 
 								userName = {post?.user}
-								datePost = {dateTimer(post?.datePublication)}
-							/> */}
+								datePost = {dates}
+							/>
 						</div>
+						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold lh-tight mb-4 long" id="title">
+							{post?.title}
+						</h1>
+						<div className="badges mt-2 mb-4" id="contTags">
+							{
+								tags.map((tag, id) => (
+									<Tag
+										key={id}
+										element = {tag}
+									/>
+								))
+							}
+						</div>						
 						<PostContent 
 							content = {post?.content}
 						/>
 					</div> 
+					
 				</Col>
 				<Col xxl={3} xl={4} lg={4} md={{ span: 11 }}>
 					<AsideRightPost 
