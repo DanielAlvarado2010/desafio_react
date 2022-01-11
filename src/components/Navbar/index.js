@@ -1,6 +1,7 @@
 import react from "react";
 import styles from "./styles.css";
 import elon from "../../images/elonmusk.jpg";
+import Button from 'react-bootstrap/Button'
 
 const Navbar = () => {
   return (
@@ -67,9 +68,10 @@ const Navbar = () => {
           <div className="left-nav-elements"></div>
 
           <div className="rigth-nav-elements">
-            <a href="#" className="create-post-button">
+            {/* <a href="#" className="create-post-button">
               Create Post{" "}
-            </a>
+            </a> */}
+            <Button variant="outline-primary">Create Post</Button>{' '}
 
             <div className="search-icon-container">
               <svg

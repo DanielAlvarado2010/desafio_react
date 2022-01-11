@@ -2,7 +2,7 @@ import "./PostDetail.css";
 
 import React, { useEffect, useState } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 // RR
 import { useNavigate, useParams } from "react-router-dom";
@@ -152,7 +152,14 @@ export default function PostDetail() {
 							content = {post?.content}
 						/>
 					</div> 
-					
+					<Row className="justify-content-end m-2">
+						<Col lg={{span: 2}}>
+							<Button variant="outline-danger">Eliminar</Button>{' '}
+						</Col>
+						<Col lg={{span: 2}}>
+							<Button variant="outline-primary">Actualizar</Button>{' '}
+						</Col>
+					</Row>
 				</Col>
 				<Col xxl={3} xl={4} lg={4} md={{ span: 11 }}>
 					<AsideRightPost 
