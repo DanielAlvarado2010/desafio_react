@@ -1,4 +1,6 @@
+import { render } from "@testing-library/react";
 import { react, useState, useEffect } from "react";
+import Select from "react-select";
 import styles from "./styles.css";
 
 const getUsers = async () => {
@@ -22,11 +24,6 @@ const CreatePost = () => {
   const tagDisplay = sideDisplay && sideDisplay == 2 ? "show" : "dontShow";
   const contentDisplay = sideDisplay && sideDisplay == 3 ? "show" : "dontShow";
 
-  const [selectedTags, setSelectedTags] = useState([]);
-  const tagArray = (event) => {
-    setSelectedTags(event.target.value);
-  };
-
   // getWeek sets the data for the specific date when the user creates the post
 
   function getWeek(currentDate) {
@@ -48,6 +45,14 @@ const CreatePost = () => {
   // Hooks to get all the tags from the DB and render them on the select tag
   const [tags, setTags] = useState([]);
 
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  const tagArray = (event) => {
+    console.log(event);
+    setSelectedTags([...selectedTags, event.value]);
+    console.log(selectedTags);
+  };
+
   useEffect(() => {
     const getTags = async () => {
       const response = await fetch("http://localhost:8080/tags");
@@ -67,8 +72,19 @@ const CreatePost = () => {
   const [postBody, setPostBody] = useState("");
   const [postImg, setPostImg] = useState("");
 
+  const renderTagOptions = () => {
+    const renderedTags = tags.map((element) => {
+      return { value: `${element}`, label: `${element}` };
+    });
+
+    console.log(renderedTags);
+    return renderedTags;
+  };
+
+  renderTagOptions();
+
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     const { userName, userImg, randomNumber } = await getUsers();
 
@@ -186,28 +202,24 @@ const CreatePost = () => {
                 />
               </div>
               <div>
-                <select
+                <Select
                   name="select"
                   id="tagSelector"
                   className="inputAddTags"
+                  placeholder="Add up to 4 tags..."
+                  // value={selectedTags}
                   onClick={() => {
                     setSideDisplay(2);
-                    tagArray();
                   }}
-                  multiple={true}
-                >
-                  <option value="" className="inputAddTags">
-                    Add up to 4 tags...
-                  </option>
-
-                  {tags.map((element) => {
-                    return (
-                      <option value={element} id={element}>
-                        {element}
-                      </option>
-                    );
+                  onChange={(event) => tagArray(event)}
+                  options={tags.map((element) => {
+                    return { value: `${element}`, label: `${element}` };
                   })}
-                </select>
+                >
+                  {/* <option value="" className="inputAddTags">
+                    Add up to 4 tags...
+                  </option> */}
+                </Select>
               </div>
             </div>
             <div className="imgContainer">

@@ -1,9 +1,10 @@
 import react from "react";
 import styles from "./styles.css";
 import elon from "../../images/elonmusk.jpg";
-import Button from 'react-bootstrap/Button'
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  let devToLogo = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-sm fixed-top">
@@ -68,10 +69,13 @@ const Navbar = () => {
           <div className="left-nav-elements"></div>
 
           <div className="rigth-nav-elements">
-            {/* <a href="#" className="create-post-button">
+            <a
+              onClick={devToLogo("/")}
+              href="../CreatePost/index.js"
+              className="create-post-button"
+            >
               Create Post{" "}
-            </a> */}
-            <Button variant="outline-primary">Create Post</Button>{' '}
+            </a> 
 
             <div className="search-icon-container">
               <svg
