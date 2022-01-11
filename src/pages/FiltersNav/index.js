@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { getPosts } from '../../services/getFilters';
-import Card from '../Card/index';
+import Card from '../Card';
 
 //styles 
 
@@ -26,7 +26,7 @@ useEffect (() => {
 
         const response = await getPosts();
         const arrayResponse = Object.values(response)
-
+            console.log(arrayResponse)
         setContent(arrayResponse)
         
     }
@@ -195,15 +195,15 @@ console.log(arrayFilter)
         <>
             <nav className='container-filters'>
                 <div className='left-filters'>  
-                    <div onClick={handleRelevant}content> Relevant </div>
-                    <div onClick={handleLatest}> Latest </div>
-                    <div onClick={handleTop}> Top </div>
+                    <div className='filter-element' onClick={handleRelevant}content> Relevant </div>
+                    <div className='filter-element' onClick={handleLatest}> Latest </div>
+                    <div className='filter-element' onClick={handleTop}> Top </div>
                 </div>
 
                 <div className='right-filters'>  
-                    <div onClick={handleWeek}> Week </div>
-                    <div onClick={handleMonth}> Month </div>
-                    <div onClick={handleYear}> Year </div>
+                    <div className='filter-element' onClick={handleWeek}> Week </div>
+                    <div className='filter-element' onClick={handleMonth}> Month </div>
+                    <div className='filter-element' onClick={handleYear}> Year </div>
                 </div>
             </nav>
 

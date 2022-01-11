@@ -11,8 +11,8 @@ import './Card.css';
         
         <div className="first-article">
             
-        <div className="article-image">
-            <img src={coverImage} alt=""/>
+        <div>
+            <img className="img-fluid" src={coverImage} alt=""/>
         </div>
         <div className="first-article-content">
             <div className="img-author">
