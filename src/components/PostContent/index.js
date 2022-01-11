@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./PostContent.css";
+
 function PostContent({content}) {
     return (
         <p id="postContent">

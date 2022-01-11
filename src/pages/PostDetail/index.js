@@ -103,23 +103,23 @@ export default function PostDetail() {
 	
 		
 	return (
-		<Container>
-			<Row className="justify-content-center">			
-				<Col xxl={1} xl={1} lg={1} md={1} className="justify-content-center">
+		<Container >
+			<Row className="justify-content-center p-0">			
+				<Col xxl={1} xl={1} lg={1} md={1} >
 					<AsideLeftPost
 						reaction = {post?.likes} 
 						unicorn = {post?.unicorns}
 						comment = {post?.comments}
 					/>
 				</Col>
-				<Col xxl={7} xl={7} lg={8} md={11} sm={"auto"} >
+				<Col xxl={7} xl={7} lg={8} md={11} sm={"auto"} className="cardPost" >
 					<ImagePost 
 						srcImage={post?.coverImage}
 						idImage="imgCover"
 						clase="card-img-top"
 					/>
-					<div className="card-body">
-						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold s:fw-heavy lh-tight mb-4 long" id="title">
+					<div className="card-post">
+						<h1 className="fs-3xl m:fs-4xl l:fs-5xl fw-bold lh-tight mb-4 long" id="title">
 							{post?.title}
 						</h1>
 						{/* {
@@ -137,10 +137,10 @@ export default function PostDetail() {
 									clase="border border-light border border-1 rounded-circle avatar"
 								/>
 							</div>
-							<UserData 
+							{/* <UserData 
 								userName = {post?.user}
 								datePost = {dateTimer(post?.datePublication)}
-							/>
+							/> */}
 						</div>
 						<PostContent 
 							content = {post?.content}
@@ -148,7 +148,10 @@ export default function PostDetail() {
 					</div> 
 				</Col>
 				<Col xxl={3} xl={4} lg={4} md={{ span: 11 }}>
-					<AsideRightPost />
+					<AsideRightPost 
+						avatarImage={post?.userImg}
+						userName={post?.user}
+					/>
 				</Col>
 			</Row>			
 		</Container>
