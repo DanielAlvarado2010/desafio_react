@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import Li from "../../components/Li";
+import "bootstrap/dist/css/bootstrap.min.css"
+import { LeftSidebar } from "../../components/LeftSidebar";
+import  SideBarRight  from '../../components/SideBarRight'
+import Container from 'react-bootstrap/Container'
+import  Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col"
 
 // RR
 import { useNavigate } from "react-router-dom";
@@ -29,6 +35,17 @@ export default function Home() {
 	
 	return (
 		<div>
+			<Container>
+				
+				<Row className="justify-content-md-center">
+				
+					<Col sm lg ={3}>  <LeftSidebar/>  </Col>
+					<Col sm lg ={6}>  <div>sadsadsa</div>  </Col>
+					<Col sm lg ={3}>  <SideBarRight/>  </Col>
+				
+				</Row>
+			
+			</Container>
 			<ul>
 				{/* {posts.map(({ id }) => (
 					<Li

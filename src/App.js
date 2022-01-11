@@ -1,6 +1,5 @@
 import react from "react";
 import "./App.css";
-<<<<<<< HEAD
 import { Outlet } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -21,20 +20,6 @@ function App() {
 			</div>
 		</div>
 	);
-=======
-import { LeftSidebar } from "./components/LeftSidebar";
-import  FiltersNav from "./pages/FiltersNav/index";
-
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">DevTo</header>
-      <FiltersNav/>
-      <LeftSidebar/>
-    </div>
-  );
->>>>>>> left-sidebar
 }
 
 export default App;
