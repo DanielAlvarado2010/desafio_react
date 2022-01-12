@@ -209,7 +209,7 @@ console.log(arrayFilter)
 
             {
                 arrayFilter.map((item) => (
-                <Card key={item.id} id={item.id} comments={item.comments} content={item.content} coverImage={item.coverImage} image={item.image} likes={item.likes} tags={item.tags} title={item.title} user={item.user} userImg={item.userImg} datePublication={item.datePublication} />
+                <Card key={item._id} id={item._id} comments={item.comments} content={item.content} coverImage={item.coverImage} image={item.image} likes={item.likes} tags={item.tags} title={item.title} user={item.user} userImg={item.userImg} datePublication={item.datePublication} />
                 ))
             }
 

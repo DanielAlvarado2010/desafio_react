@@ -1,11 +1,13 @@
 import React from 'react'
+import  {Link, useNavigate} from "react-router-dom"
 
 //Styles
 import './Card.css';
 
 
 
- const Card = ({id,comments,content,coverImage,image,likes,tags,title,user,userImg, datePublication}) => {
+ const Card = ({_id,comments,content,coverImage,image,likes,tags,title,user,userImg, datePublication}) => {
+ const navigate = useNavigate();
 
     return (
         
@@ -24,9 +26,12 @@ import './Card.css';
                     <div  className="down-text">{datePublication.month}  {datePublication.year}</div>
                 </div>
             </div>
-            <div className="title" >
+            <Link className="title" to='detail/${_id}' >
                 <h2>{title}</h2>
-            </div>
+            </Link>
+            
+
+            
             <div className="hashtag-conteiner">
                 <div><span>#</span>{tags.t1}</div>
                 <div><span>#</span>{tags.t2}</div>
