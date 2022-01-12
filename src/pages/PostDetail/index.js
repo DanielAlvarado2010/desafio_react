@@ -46,7 +46,7 @@ export default function PostDetail() {
 	const handleDelete = async () => {
 		console.error("eliminado");
 		await deletePost(postID);
-		navigate("/posts");
+		navigate("/");
 	};
 
 	
@@ -154,10 +154,10 @@ export default function PostDetail() {
 					</div> 
 					<Row className="justify-content-end m-2">
 						<Col lg={{span: 2}}>
-							<Button variant="outline-danger">Eliminar</Button>{' '}
+							<Button variant="outline-danger" onClick={handleDelete} >Eliminar</Button>{' '}
 						</Col>
 						<Col lg={{span: 2}}>
-							<Button variant="outline-primary">Actualizar</Button>{' '}
+							<Button variant="outline-primary" onClick={() => navigate(`update`)}>Actualizar</Button>{' '}
 						</Col>
 					</Row>
 				</Col>
