@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 import { react, useState, useEffect } from "react";
 import Select from "react-select";
 import styles from "./styles.css";
@@ -126,7 +126,7 @@ const CreatePost = () => {
 
   return (
     <div>
-      <header>
+      {/* <header>
         <div className="container-fluid c-fluid newPostBarBackground">
           <nav className="navbar navbar-expand-lg navbar_bar">
             <div className="container container_bar editPostBar">
@@ -184,7 +184,7 @@ const CreatePost = () => {
             </div>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       <div className="container">
         <div className="row">

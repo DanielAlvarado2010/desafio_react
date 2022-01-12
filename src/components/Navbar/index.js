@@ -1,10 +1,10 @@
 import react from "react";
 import styles from "./styles.css";
 import elon from "../../images/elonmusk.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Navbar = () => {
-  let devToLogo = useNavigate();
+  let navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-sm fixed-top">
@@ -24,7 +24,7 @@ const Navbar = () => {
               />
             </div>
           </a>
-          <a className="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             <svg
               width="50"
               height="39"
@@ -44,7 +44,7 @@ const Navbar = () => {
                 style={{ fill: "#ffffff" }}
               ></path>
             </svg>
-          </a>
+          </Link>
 
           <div className="form-container">
             <form
@@ -69,13 +69,9 @@ const Navbar = () => {
           <div className="left-nav-elements"></div>
 
           <div className="rigth-nav-elements">
-            <a
-              onClick={devToLogo("/")}
-              href="../CreatePost/index.js"
-              className="create-post-button"
-            >
+            <Link to="/NewPost" className="create-post-button">
               Create Post{" "}
-            </a>
+            </Link>
 
             <div className="search-icon-container">
               <svg

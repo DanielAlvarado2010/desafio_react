@@ -6,20 +6,21 @@ import { Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+//     "bootstrap": "^5.1.3",
+
 function App() {
   return (
-		<div className="main">
-			<nav className="main-nav">
-				<Navbar />
-			</nav>
-			<div className="main-content">
-				<Outlet />
-			</div>
-			<div>
-				<Footer />
-			</div>
-		</div>
-	);
+    <div className="main">
+      <nav className="main-nav">
+        <Navbar />
+      </nav>
+      <div className="main-content">
+        <Outlet />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </div>
+  );
 }
 export default App;
- 
