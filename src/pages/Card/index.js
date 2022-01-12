@@ -26,7 +26,7 @@ import './Card.css';
                     <div  className="down-text">{datePublication.month}  {datePublication.year}</div>
                 </div>
             </div>
-            <Link className="title" to='detail/${_id}' >
+            <Link className="title" to={_id} >
                 <h2>{title}</h2>
             </Link>
             
