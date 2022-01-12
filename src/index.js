@@ -21,7 +21,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="/NewPost" element={<NewPost />} />
-          <Route path="detail" element={<PostDetailContainer />}>
+          <Route path=":postID" element={<PostDetailContainer />}>
             <Route index element={<PostDetail />} />
             <Route path="update" element={<PostUpdate />} />
           </Route>
