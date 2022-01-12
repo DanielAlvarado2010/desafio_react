@@ -47,15 +47,6 @@ export default function Home() {
 				</Row>
 			
 			</Container>
-			<ul>
-				{/* {posts.map(({ id }) => (
-					<Li
-						key={id}
-						buttonText="Detalle"
-						callback={() => navigate(`${id}`)}
-					/>
-				))} */}
-			</ul>
 		</div>
 	);
 }

@@ -1,90 +1,108 @@
 import React, { useState, useEffect } from "react";
 
-// Input
-// import Input from "../../components/Input";
+import "./PostUpdate.css";
 
 // Services
-// import { getUser, updateUser } from "../../services/users";
+import { getPost, updatePost } from "../../services/posts";
 
 // RR
 // El useParams, se utiliza para obtener los parametros que se están enviando desde la URL
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Input from "../../components/Input";
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-dom";
 
 function PostUpdate() {
-	// const [firstName, setFirstName] = useState("");
-	// const [lastName, setLastName] = useState("");
-	// const [gender, setGender] = useState("");
-	// const [occupation, setOccupation] = useState("");
-	// const [birthdate, setBirthdate] = useState("");
+	const [user, setUser] = useState("");
+	const [title, setTitle] = useState("");
+	const [content, setContent] = useState("");
+	const [likes, setLikes] = useState("");
+	const [unicorns, setUnicorns] = useState("");
+	const [comments, setComments] = useState("");
 
-    // // Aquí instanciamos a una variable el useParams, para tener acceso a los parametros de la URL
-	// const params = useParams();
+    // Aquí instanciamos a una variable el useParams, para tener acceso a los parametros de la URL
+	const params = useParams();
 
-	// useEffect(() => {
-	// 	const get = async () => {
-    //         // Aquí al momento de invocar el servicio de getUser, enviamos el parametro de userID, que obtuvimos desde la URL con el useParams
-	// 		const { firstName, lastName, gender, occupation, birthdate } = await getUser(params.userID);
-	// 		// console.log(response);
-	// 		setFirstName(firstName);
-	// 		setLastName(lastName);
-	// 		setGender(gender);
-	// 		setOccupation(occupation);
-	// 		setBirthdate(birthdate);
-	// 	};
-	// 	get();
-    //     // Aquí es necesario que se este escuchando si el Id del usuario cambia
-	// }, [params.userID]);
+	const postID = "61a65429f4ff3c9f4961ff37";
 
-	// const handleSubmit = async (event) => {
-	// 	event.preventDefault();
-	// 	const data = {
-	// 		firstName,
-	// 		lastName,
-	// 		gender,
-	// 		occupation,
-	// 		birthdate,
-	// 	};
+	useEffect(() => {
+		const get = async () => {
+            // Aquí al momento de invocar el servicio de getUser, enviamos el parametro de userID, que obtuvimos desde la URL con el useParams
+			// const { firstName, lastName, gender, occupation, birthdate } = await getPost(postID);
+			const response = await getPost(postID);
+			const {user, title, content, likes, unicorns, comments} = response.posts;
+			setUser(user);
+			setTitle(title);
+			setContent(content);
+			setLikes(likes);
+			setUnicorns(unicorns);
+			setComments(comments);
+		};
+		get();
+        // Aquí es necesario que se este escuchando si el Id del usuario cambia
+	}, [postID]);
 
-    //     // Para el metodo de actualización con el PATCH, estamos enviando el ID y los datos a actualizar desde el formulario
-    //     // Según lo que nos comenta David, al ser un metodo PATCH, es mejor enviar la data completa desde el Front y el Back es el que se debe encargar de revisar
-    //     // que es lo que debe actualizarse
-	// 	await updateUser(params.userID, data);
-	// 	console.log("holi");
-	// };
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		const data = {
+			user, 
+			title, 
+			content, 
+			likes, 
+			unicorns, 
+			comments
+		};
+
+        // Para el metodo de actualización con el PATCH, estamos enviando el ID y los datos a actualizar desde el formulario
+        // Según lo que nos comenta David, al ser un metodo PATCH, es mejor enviar la data completa desde el Front y el Back es el que se debe encargar de revisar
+        // que es lo que debe actualizarse
+		await updatePost(postID, data);
+		console.log("holi");
+	};
+
 
 	return (
-		<div className="">
-			<h1>Actualizar usuario </h1>
-			{/* <form onSubmit={handleSubmit}>
-				<Input
-					id="firstName"
-					label="First Name"
-					value={firstName}
-					setValue={setFirstName}
-				/>
-				<Input
-					id="lastName"
-					label="Last Name"
-					value={lastName}
-					setValue={setLastName}
-				/>
-				<Input id="gender" label="Gender" value={gender} setValue={setGender} />
-				<Input
-					id="occupation"
-					label="Occupation"
-					value={occupation}
-					setValue={setOccupation}
-				/>
-				<Input
-					id="birthdate"
-					type="date"
-					label="Birthdate"
-					value={birthdate}
-					setValue={setBirthdate}
-				/>
-				<button type="submit">Actualizar</button>
-			</form> */}
-		</div>
+		<Container>
+			<Row>
+				<Col className="m-2">
+					<form onSubmit={handleSubmit}>
+						<Input
+							id="userName"
+							label="User Name"
+							value={user}
+							setValue={setUser}
+						/>
+						<Input
+							id="title"
+							label="Title"
+							value={title}
+							setValue={setTitle}
+						/>
+						<label className="label" htmlFor="content">
+							Contenido
+						</label>
+						<textarea
+							className="textArea"
+							name="content"
+							cols="150"
+							rows="16"
+							id="content"
+							value={content}
+							setValue={setContent}
+						>							
+						</textarea>
+						<Input
+							id="likes"
+							label="Likes"
+							value={likes}
+							setValue={setLikes}
+						/>
+						<button type="submit" className="btn btn-primary" >Actualizar</button>
+					</form>			
+				</Col>
+			</Row>
+		</Container>
 	);
 }
 
