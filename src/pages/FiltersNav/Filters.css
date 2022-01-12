@@ -1,11 +1,24 @@
 .container-filters {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .container-filters .left-filters {
     display: flex;
+    justify-content: space-between;
+}
+.container-filters .filter-element{
+    padding:5px;
+    border-radius: 10%;
+
+}
+.container-filters .filter-element:hover{
+    background-color: rgb(255,255,255);
+    color: rgb(50,62,196)
 }
 
 .container-filters .right-filters {
     display: flex;
+    justify-content: space-between;
 }
