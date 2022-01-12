@@ -71,7 +71,7 @@ const Navbar = () => {
           <div className="rigth-nav-elements">
             <Link to="/NewPost" className="create-post-button">
               Create Post{" "}
-            </a> 
+            </Link>
 
             <div className="search-icon-container">
               <svg
